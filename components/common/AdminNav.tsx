@@ -6,6 +6,7 @@ import {
   AiOutlineContainer,
   AiOutlineTeam,
   AiOutlineMail,
+  AiOutlineUser,
 } from "react-icons/ai";
 
 interface IAdminNavProps {}
@@ -21,12 +22,28 @@ const AdminNav: React.FunctionComponent<IAdminNavProps> = (props) => {
             </span>
           </a>
         </Link>
-      </div>
-      <div>
         <Link href="/admin" legacyBehavior>
-          <a className="flex items-center dark:text-highlight-dark text-highlight-light text-xl p-3 hover:scale-[0.98] transition gap-2">
+          <a className="flex items-center dark:text-highlight-dark text-highlight-light text-xl p-3 hover:scale-[0.98] transition gap-2 mt-5">
             <AiOutlineDashboard size={24} />
             <span>Dashboard</span>
+          </a>
+        </Link>
+        <Link href="/admin/posts" legacyBehavior>
+          <a className="flex items-center dark:text-highlight-dark text-highlight-light text-xl p-3 hover:scale-[0.98] transition gap-2">
+            <AiOutlineContainer size={24} />
+            <span>Posts</span>
+          </a>
+        </Link>
+        <Link href="/admin/users" legacyBehavior>
+          <a className="flex items-center dark:text-highlight-dark text-highlight-light text-xl p-3 hover:scale-[0.98] transition gap-2">
+            <AiOutlineUser size={24} />
+            <span>Users</span>
+          </a>
+        </Link>
+        <Link href="/admin/comments" legacyBehavior>
+          <a className="flex items-center dark:text-highlight-dark text-highlight-light text-xl p-3 hover:scale-[0.98] transition gap-2">
+            <AiOutlineMail size={24} />
+            <span>Comments</span>
           </a>
         </Link>
       </div>
