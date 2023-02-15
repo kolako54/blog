@@ -13,7 +13,8 @@ const navItems = [
   { href: "/admin/users", icon: AiOutlineTeam, label: "Users" },
   { href: "/admin/comments", icon: AiOutlineMail, label: "comments" },
 ];
-const Admin: React.FunctionComponent<IAdminProps> = (props) => {
+const Admin = (props: IAdminProps) => {
+  console.log(props);
   return (
     <div className="dark">
       <AdminNav navItems={navItems} />
