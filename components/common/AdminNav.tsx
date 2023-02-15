@@ -1,13 +1,6 @@
 import Admin from "@/pages/admin";
 import Link from "next/link";
 import Logo from "./Logo";
-import {
-  AiOutlineDashboard,
-  AiOutlineContainer,
-  AiOutlineTeam,
-  AiOutlineMail,
-  AiOutlineUser,
-} from "react-icons/ai";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IconType } from "react-icons/lib";
 
