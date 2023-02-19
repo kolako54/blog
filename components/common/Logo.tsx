@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
 interface Props {
   className?: string;
 }
-const Logo: FC<Props> = ({ className }) => (
+const Logo = ({ className }: Props) => (
   <svg
     width="32"
     height="32"

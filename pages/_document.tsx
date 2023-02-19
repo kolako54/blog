@@ -1,4 +1,6 @@
-import { Html, Head, Main, NextScript } from "next/document";
+/* eslint-disable simple-import-sort/imports */
+/* eslint-disable react/function-component-definition */
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
