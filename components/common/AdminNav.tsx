@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BiMenuAltLeft } from 'react-icons/bi';
 import { type IconType } from 'react-icons/lib';
 import { RiMenuUnfoldFill } from 'react-icons/ri';
@@ -16,19 +16,35 @@ const AdminNav: React.FunctionComponent<AdminNavProps> = ({ navItems }) => {
   const [visible, setVisible] = useState(true);
   const navTag = useRef<HTMLElement>(null);
 
-  const updateNavbar = () => {
+  const toggleNav = (visibility: boolean) => {
     const { current } = navTag;
     if (!current) return;
 
-    if (visible) {
+    if (visibility) {
       current.classList.remove(NAVBAR_OPEN);
       current.classList.add(NAVBAR_CLOSE);
     } else {
       current.classList.add(NAVBAR_OPEN);
       current.classList.remove(NAVBAR_CLOSE);
     }
-    setVisible(!visible);
   };
+
+  const updateNavbar = () => {
+    toggleNav(visible);
+    const newState = !visible;
+    setVisible(newState);
+    localStorage.setItem('nav-visibility', JSON.stringify(newState));
+  };
+  useEffect(() => {
+    const getVisibility = localStorage.getItem('nav-visibility');
+
+    if (!getVisibility) {
+      setVisible(true);
+    } else {
+      setVisible(JSON.parse(getVisibility));
+      toggleNav(!visible);
+    }
+  }, [visible]);
 
   return (
     <nav
